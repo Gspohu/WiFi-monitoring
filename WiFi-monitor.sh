@@ -38,7 +38,7 @@ do
 	link=$(awk 'NR==3 {print  $3 "00 "}''' /proc/net/wireless) 
 	level=$(awk 'NR==3 {print  $4 }''' /proc/net/wireless)
 	noise=$(awk 'NR==3 {print  $5 }''' /proc/net/wireless)
-	pong=$(ping -i 0.5 -c 5 www.ovh.com)
+	pong=$(ping -i 0,5 -c 5 www.ovh.com)
 	loss=$(echo $pong | cut  -d \, -f 3 | cut -d \p -f 1)
 	latence=$(echo $pong | cut  -d \/ -f 5 | cut -d \/ -f 6)
 
